@@ -1,21 +1,57 @@
---= 基本 =--
+------===  选项参数  ===------
+HEAD 表示最新的版本
+
+------===  基本  ===------
 创建版本库：git init
+
 提交暂存区：git add <file_name>
 (把文件修改添加到暂存区)
+
 提交更新：git commit -m "change_log" 
-(实际上就是把暂存区的所有内容提交到当前分支.每一次commit就生产一次快照)
+(实际上就是把暂存区的所有内容提交到当前分支，每一次commit就生产一次快照)
+
 仓库当前的状态：git status
+
 查看不同：git diff <file_name>
 (查看工作区和版本库里面最新版本的区别：git diff HEAD -- <file_name>)
+
 历史记录：git log
+
 历史回退：git reset <commit_id> 或 git reset --hard <commit_id>
+
+撤销暂存区：git reset HEAD <file_name>
+
 命令记录：git reflog
 
---= 分支 =--
+恢复文件：git checkout -- <file_name>
+(将文件在工作区的修改全部撤销，两种情况，一种是自修改后还没有被放到暂存区，从版本库里恢复；
+另一种是已经添加到暂存区，又修改了，则从暂存区里恢复)
+
+删除文件：git rm <file_name>
+(记得要commit才可以从库里删除)
+
+------===  分支管理  ===------
 查看分支：git branch
+
 创建分支：git branch <branch_name>
+
 切换分支：git checkout <branch_name>
+
 创建+切换分支：git checkout -b <branch_name>
+
 合并某分支到当前分支：git merge <branch_name>
+
 删除分支：git branch -d <branch_name>
+
+------===  远程仓库  ===------
+在github、gitosc或私有的git服务端创建好账号并设置好ssh的key(可以参考http://git.oschina.net/oschina/git-osc/wikis/%E5%B8%AE%E5%8A%A9#ssh-keys)，并在远程创建好仓库。
+
+以下以github为例（目录是dengly，远程库是origin，项目是gitleance）：
+关联远程端：git remote add origin https://github.com/dengly/gitleance.git
+
+把本地库的内容推送到远程：git push origin master
+(第一次推送master分支的所有内容：git push -u origin master)
+
+从远程库克隆：git clone git@github.com:dengly/gitleance.git 或 git clone https://github.com/dengly/gitleance.git
+
 
