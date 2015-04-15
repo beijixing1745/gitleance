@@ -9,7 +9,7 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 (在当前目录创建了.git目录，推荐查看里面的结构，对了解git有帮助)
 
 提交暂存区：git add <file_name>
-(把文件修改添加到暂存区)
+(把文件修改添加到暂存区，将当前的所有文件添加到暂存区git add .)
 
 提交更新：git commit -m "change_log" 
 (实际上就是把暂存区的所有内容提交到当前分支，每一次commit就生产一次快照)
@@ -25,6 +25,7 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 历史回退：git reset <commit_id> 或 git reset --hard <commit_id>
 
 撤销暂存区：git reset HEAD <file_name>
+(撤销暂存区所有内容：git reset 或 git reset HEAD)
 
 命令记录：git reflog
 
