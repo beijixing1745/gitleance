@@ -1,0 +1,21 @@
+--= 基本 =--
+创建版本库：git init
+提交暂存区：git add <file_name>
+(把文件修改添加到暂存区)
+提交更新：git commit -m "change_log" 
+(实际上就是把暂存区的所有内容提交到当前分支.每一次commit就生产一次快照)
+仓库当前的状态：git status
+查看不同：git diff <file_name>
+(查看工作区和版本库里面最新版本的区别：git diff HEAD -- <file_name>)
+历史记录：git log
+历史回退：git reset <commit_id> 或 git reset --hard <commit_id>
+命令记录：git reflog
+
+--= 分支 =--
+查看分支：git branch
+创建分支：git branch <branch_name>
+切换分支：git checkout <branch_name>
+创建+切换分支：git checkout -b <branch_name>
+合并某分支到当前分支：git merge <branch_name>
+删除分支：git branch -d <branch_name>
+
