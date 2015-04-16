@@ -93,14 +93,14 @@ Git用<<<<<<<，=======，>>>>>>>标记出不同分支的内容
 (更详细的信息：git remote -v)
 
 推送本地库的某分支到远程：git push origin <branch_name>
-(第一次推送，建议推送master分支的所有内容：git push -u origin master)
+(第一次推送，建议推送master分支的所有内容，这是远程端没有master分支时使用：git push -u origin master)
 
 从远程库克隆：git clone git@github.com:dengly/gitleance.git 或 git clone https://github.com/dengly/gitleance.git
 
 从远程分支获取内容到本分支：git pull
-(git pull <remote> <branch_name>)
+(没有初建关联使用git pull <remote> <branch_name>)
 
-创建本地对分支与远程的分支链接关系：git branch --set-upstream <branch_name> origin/<branch_name>
+创建本地对分支与远程的分支链接关系：git branch --set-upstream-to origin/<branch_name> <branch_name>
 
 
 ------===  分支协作策略  ===------
